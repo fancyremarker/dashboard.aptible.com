@@ -7,6 +7,13 @@ export default DS.Model.extend({
   username: DS.attr('string'),
   password: DS.attr('string'),
 
+  // used when changing a user's password. Set as an `attr` so that it
+  // will be sent to the API
+  currentPassword: DS.attr('string'),
+
+  // not persisted, used when changing a user's password
+  passwordConfirmation: null,
+
   // relationships
   token: DS.belongsTo('token', {async: true}),
   roles: DS.hasMany('role', {async:true}),
