@@ -65,6 +65,8 @@ test('visit ' + settingsProfileUrl + ' shows profile info', function(){
 });
 
 test('visit ' + settingsProfileUrl + ' allows updating name', function(){
+  expect(6);
+
   var newName = 'Graham Shuttlesworth';
 
   stubRequest('put', userApiUrl, function(request){

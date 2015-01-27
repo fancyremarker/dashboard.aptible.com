@@ -29,8 +29,14 @@
         </div>
 
         <div class="form-group">
-          <button class="btn btn-primary" type="submit" {{action "submit" userName}}>
-            Update profile
+          <button {{action "submit" userName}}
+             {{bind-attr disabled=session.currentUser.isSaving}}
+             class="btn btn-primary" type="submit">
+            {{#if session.currentUser.isSaving}}
+              Saving
+            {{else}}
+              Update profile
+            {{/if}}
           </button>
         </div>
       </form>
